@@ -1,4 +1,4 @@
-name: Sync pr's branches with their base branch
+name: Sync pr's branches with their base branch and find merge conflicts
 
 on:
   push:
