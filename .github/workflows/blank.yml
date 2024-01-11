@@ -27,6 +27,9 @@ jobs:
           git config --global user.name "sigrtmax"
           while read -r branch; do
             git checkout $branch
-            git merge origin/master --no-edit
-            git push origin $branch
+            if ! git merge origin/master --no-edit; then
+              echo "Conflict in ${branch}"
+            else
+              git push origin $branch
+            fi
           done < ${{ github.workspace }}/branches.txt
