@@ -28,7 +28,7 @@ jobs:
           while read -r branch; do
             git checkout $branch
             if ! git merge origin/master --no-edit; then
-              echo "Conflict1 in ${branch}"
+              echo "Conflict in ${branch}"
               git merge --abort
             else
               git push origin $branch
