@@ -1,10 +1,8 @@
 name: Pull request update
-
 on:
     push:
         branches:
             - master
-
 jobs:
     autoupdate:
         runs-on: ubuntu-latest
