@@ -1,17 +1,22 @@
-name: Pull request update
+name: Sync pr's branches with their base branch
+
 on:
-    push:
-        branches:
-            - master
+  push:
+    branches:
+      - main
+
 jobs:
-    autoupdate:
-        runs-on: ubuntu-latest
-        permissions: write-all
-        steps:
-        - uses: actions/checkout@v3
-        - name: Update opened PRs
-          uses: castastrophe/actions-pr-auto-update@v1
-          with:
-              # Optional: include a list of labels which, if present, will prevent the PR from being updated; these are comma-separated.
-              exclude_labels: "skip update"
-          
+  update-branches:
+    runs-on: ubuntu-latest
+    name: Update branches
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Merge base branch
+        uses: omaresmael/merge-base-branch@v1
+        with:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
