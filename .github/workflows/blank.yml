@@ -3,7 +3,7 @@ name: Sync pr's branches with their base branch
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   update-branches:
