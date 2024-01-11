@@ -26,6 +26,6 @@ jobs:
           git config --global user.name "sigrtmax"
           while read -r branch; do
             git checkout $branch
-            git merge origin/main --no-edit
+            git merge origin/master --no-edit
             git push origin $branch
           done < ${{ github.workspace }}/branches.txt
