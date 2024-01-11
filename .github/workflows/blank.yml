@@ -19,4 +19,4 @@ jobs:
       - name: Merge base branch
         uses: omaresmael/merge-base-branch@v1.0
         with:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.USER_TOKEN }}
