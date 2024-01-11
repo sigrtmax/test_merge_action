@@ -21,7 +21,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.USER_TOKEN }}
 
-  triage:
+  find-merge-conflicts:
     runs-on: ubuntu-latest
     steps:
       - uses: hcancelik/pr-conflict-finder@v1
