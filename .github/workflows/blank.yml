@@ -25,11 +25,11 @@ jobs:
         run: |   
           git config --global user.email "sigrtmax42@gmail.com"
           git config --global user.name "sigrtmax"
-          set -e
           while read -r branch; do
             git checkout $branch
             if ! git merge origin/master --no-edit; then
               echo "Conflict in ${branch}"
+              git merge --abort
             else
               git push origin $branch
             fi
