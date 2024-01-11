@@ -20,3 +20,13 @@ jobs:
         uses: omaresmael/merge-base-branch@v1.0
         with:
           GITHUB_TOKEN: ${{ secrets.USER_TOKEN }}
+
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hcancelik/pr-conflict-finder@v1
+        with:
+          secret_token: ${{ secrets.USER_TOKEN }}
+          conflict_label: "Has Conflict"
+          max_tries: 5
+          wait_ms: 5000
