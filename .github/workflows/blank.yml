@@ -6,8 +6,7 @@ on:
 jobs:
     autoupdate:
         runs-on: ubuntu-latest
-        permissions:
-            pull-requests: write
+        permissions: write-all
         steps:
         - uses: actions/checkout@v3
         - name: Update opened PRs
