@@ -17,6 +17,6 @@ jobs:
         with:
           node-version: 18
       - name: Merge base branch
-        uses: omaresmael/merge-base-branch@v1
+        uses: omaresmael/merge-base-branch@v1.0
         with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
