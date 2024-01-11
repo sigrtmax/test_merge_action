@@ -10,7 +10,7 @@ jobs:
         steps:
         - uses: actions/checkout@v3
         - name: Update opened PRs
-          uses: castastrophe/actions-pr-auto-update@v1.1.0
+          uses: castastrophe/actions-pr-auto-update@v1
           with:
               # Optional: include a list of labels which, if present, will prevent the PR from being updated; these are comma-separated.
               exclude_labels: "skip update"
